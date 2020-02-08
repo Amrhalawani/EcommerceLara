@@ -30,12 +30,12 @@ class User extends Authenticatable
 
         public function payments(){
 
-        return $this->hasMany(payment::class);
+        return $this->hasMany(Payment::class);
     }
 
 
         public function shipments(){
-        return $this->hasMany(shipment::class);} // hasMany for shipping_address and billing_address
+        return $this->hasMany(Shipment::class);} // hasMany for shipping_address and billing_address
 
         public function shippingAddress(){
         return $this->hasOne(Address::class,'id','shipping_address');}

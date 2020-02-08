@@ -1,5 +1,7 @@
 <?php
 
+use App\Address;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -9,8 +11,15 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
+    //for implement the faker
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+
+        factory(Address::class,10)->create();
+
+    factory(User::class,20)->create();
+
+
     }
 }
