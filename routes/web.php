@@ -11,6 +11,24 @@
 |
 */
 
+use App\Image;
+use App\Product;
+use App\User;
+
+Route::get('users',function (){
+   return User::paginate(50);
+});
+
+Route::get('products',function (){
+   return Product::with(['images'])->paginate(50);
+});
+
+Route::get('images',function (){
+   return Image::with('product')->paginate(150);
+});
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

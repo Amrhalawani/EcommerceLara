@@ -10,7 +10,7 @@ class Product extends Model
         'title', 'desc', 'unit', 'total','price'
     ];
 
-    public function image(){
+    public function images(){
         return $this->hasMany(Image::class);
     }
 }
