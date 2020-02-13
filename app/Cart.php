@@ -9,4 +9,11 @@ class Cart extends Model
     protected $fillable = [
         'cart_items', 'total' ];
 
+
+
+    public function __construct()
+    {
+
+    }
+
 }

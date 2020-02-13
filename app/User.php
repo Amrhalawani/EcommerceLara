@@ -17,31 +17,47 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'name', 'email', 'email_verified', 'password','mobile','mobile_verified','shipping_address','billing_address',
+        'name', 'email', 'email_verified', 'password', 'mobile', 'mobile_verified', 'shipping_address', 'billing_address',
     ];
 
 
-    public function orders(){
+    public function orders()
+    {
 
-        return $this->hasMany(Order::class);}
+        return $this->hasMany(Order::class);
+    }
 
 
-
-
-        public function payments(){
+    public function payments()
+    {
 
         return $this->hasMany(Payment::class);
     }
 
 
-        public function shipments(){
-        return $this->hasMany(Shipment::class);} // hasMany for shipping_address and billing_address
+    public function shipments()
+    {
+        return $this->hasMany(Shipment::class);
+    } // hasMany for shipping_address and billing_address
 
-        public function shippingAddress(){
-        return $this->hasOne(Address::class,'id','shipping_address');}
+    public function shippingAddress()
+    {
+        return $this->hasOne(Address::class, 'id', 'shipping_address');
+    }
 
-public function billingAddress(){
-        return $this->hasOne(Address::class,'id','billing_address');}
+    public function billingAddress()
+    {
+        return $this->hasOne(Address::class, 'id', 'billing_address');
+    }
+
+    public function wishlist()
+    {
+        return $this->hasOne(Wishlist::class);
+    }
+  public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 
 
     /**

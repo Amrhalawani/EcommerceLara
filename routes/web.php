@@ -16,7 +16,7 @@ use App\Product;
 use App\User;
 
 Route::get('users',function (){
-   return User::paginate(50);
+    return User::paginate(50);
 });
 
 Route::get('products',function (){
