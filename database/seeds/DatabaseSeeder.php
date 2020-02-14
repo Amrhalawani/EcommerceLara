@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         factory(Image::class, 400)->create();
 
         factory(Review::class, 400)->create();
+
       //still factory not created  factory(Wishlist::class, 200)->create();
 
 
